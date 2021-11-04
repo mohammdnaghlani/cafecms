@@ -38,6 +38,18 @@
                     <label for="fullname">نام و نام خانوادگی</label>
                     <input type="text" name="fullname" class="form-control" id="fullname" placeholder="نام و نام خانوادگی">
                   </div>
+                  <div class="form-group">
+                    <label for="mobile">شماره مبایل</label>
+                    <input type="text" name="mobile" class="form-control" id="mobile" placeholder="شماره مبایل">
+                  </div>
+                  <div class="form-group">
+                    <label for="role">نقش کاربری</label>
+                    <select name="role" id="role" class="form-control">
+                      <option value="">یک مورد را انخاب کنید</option>
+                      <option value="1">کاربر</option>
+                      <option value="2">مدیر</option>
+                    </select>
+                  </div>
                 </div>
                 <!-- /.box-body -->
 
