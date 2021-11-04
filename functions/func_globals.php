@@ -36,3 +36,9 @@ function getUriByAliensName(string $aliens_Name) : string
 
   return get__env('BASE_URI') . $getRouteByAliensName ;
 }
+
+function getConfig(string $config_name) : mixed
+{
+    $config = include createPath('config.' . $config_name) ;
+    return $config ;
+}

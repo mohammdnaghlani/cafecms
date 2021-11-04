@@ -1,0 +1,12 @@
+{
+    "name": "cafeamoozesh/cafecms",
+    "authors": [
+        {
+            "name": "MohammadNaghlani",
+            "email": "mr.naghlani@gmail.com"
+        }
+    ],
+    "require": {
+        "catfan/medoo": "^2.1"
+    }
+}

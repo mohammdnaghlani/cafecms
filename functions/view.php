@@ -17,9 +17,10 @@ function adminAddUser($params)
 
 function adminSaveUser($params)
 {
+    $conn = connect() ;
     echo '<pre>';
-    print_r($params);
-    print_r($_SESSION) ;
+    print_r($conn->select('users' , '*'));
+
     echo '</pre>';
 
     die() ;
