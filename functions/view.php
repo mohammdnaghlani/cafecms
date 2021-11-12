@@ -17,10 +17,12 @@ function adminAddUser($params)
 
 function adminSaveUser($params)
 {
-    $conn = connect() ;
+    $validation = validation($params , ['email' => 'required']);
+    if($validation){
+        //saveInfo
+    }
     echo '<pre>';
-    print_r($conn->select('users' , '*'));
+    var_dump($validation) ;
     echo '</pre>';
-
     die() ;
 }
