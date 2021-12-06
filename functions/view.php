@@ -18,8 +18,9 @@ function adminAddUser($params)
 function adminSaveUser($params)
 {
     $validation = validation($params , ['email' => 'required']);
-    if($validation){
-        //saveInfo
+    if(is_array($validation)){
+        setMessage('success','this is a test');
+        header('location:http://cafecms.mn/admin/user/add');
     }
     echo '<pre>';
     var_dump($validation) ;

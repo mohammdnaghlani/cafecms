@@ -1,9 +1,10 @@
 <?php
 try{
 
-    require_once '../bootstrap/init.php';
+  require_once '../bootstrap/init.php';
 
-    runApp() ;
+  runApp() ;
+
 
 }catch(Exception $error){
 
