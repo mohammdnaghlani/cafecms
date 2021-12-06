@@ -9,4 +9,6 @@ require_once createPath('core.view');
 require_once createPath('core.CSRF');
 require_once createPath('core.database');
 require_once createPath('core.validation');
+require_once createPath('core.FlashMessage');
 require_once createPath('functions.view');
+require_once createPath('functions.message');
