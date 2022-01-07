@@ -17,13 +17,29 @@ function adminAddUser($params)
 
 function adminSaveUser($params)
 {
-    $validation = validation($params , ['email' => 'required']);
-    if(is_array($validation)){
-        setMessage('success','this is a test');
-        header('location:http://cafecms.mn/admin/user/add');
+    $validation = validation($params , ['email' => 'required|email' ] , [
+        'required' => ':attribute اجباری می باشد',
+        'email:email' => ':attribute فرمت رعایت نشده است '
+    ]);
+
+    if(!$validation['status']){
+        setErrors($validation['errors']->firstOfAll() , 'form');
+        setOld($params);
+        setMessage('error','this is a test');
+        header('location:http://localhost/admin/user/add');
     }
-    echo '<pre>';
-    var_dump($validation) ;
-    echo '</pre>';
-    die() ;
+    $params = (object) $params ;
+    $addUser = insertUser([
+        'email' => $params->email,
+        'full_name' => $params->fullname,
+        'password' => $params->password,
+        'role' => $params->role,
+        'mobile' => $params->mobile,
+        'confirmed' => 1
+    ]);
+    if($addUser > 0){
+        setMessage('success','add User !');
+        header('location:http://localhost/admin/user/add');
+    }
+ 
 }

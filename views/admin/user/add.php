@@ -27,7 +27,9 @@
               <?=CSRFInput() ;?>
                 <div class="box-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">ایمیل</label>
+                    <label for="exampleInputEmail1">ایمیل
+                      <span style="text-danger"><?=getErrorByKey('email' , 'form') ;?></span>
+                    </label>
                     <input type="text" name="email" class="form-control" id="exampleInputEmail1" placeholder="ایمیل">
                   </div>
                   <div class="form-group">
@@ -36,7 +38,7 @@
                   </div>
                   <div class="form-group">
                     <label for="fullname">نام و نام خانوادگی</label>
-                    <input type="text" name="fullname" class="form-control" id="fullname" placeholder="نام و نام خانوادگی">
+                    <input type="text" name="fullname" class="form-control" id="fullname" placeholder="نام و نام خانوادگی" value="<?=getOld('fullname');?>">
                   </div>
                   <div class="form-group">
                     <label for="mobile">شماره مبایل</label>
@@ -46,8 +48,8 @@
                     <label for="role">نقش کاربری</label>
                     <select name="role" id="role" class="form-control">
                       <option value="">یک مورد را انخاب کنید</option>
-                      <option value="1">کاربر</option>
-                      <option value="2">مدیر</option>
+                      <option value="1" <?=(getOld('role') == 1 ? 'selected':'')?>>کاربر</option>
+                      <option value="2" >مدیر</option>
                     </select>
                   </div>
                 </div>

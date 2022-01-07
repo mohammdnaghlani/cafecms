@@ -10,4 +10,11 @@ require_once createPath('core.CSRF');
 require_once createPath('core.database');
 require_once createPath('core.validation');
 require_once createPath('core.FlashMessage');
+require_once createPath('core.error');
+require_once createPath('core.oldData');
 require_once createPath('functions.view');
+
+
+#Models
+
+require_once createPath('functions.User');

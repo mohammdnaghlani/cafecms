@@ -1,6 +1,6 @@
 <?php
 
-function validation(array $params ,array $validation_rule , array|null $messages = null) : array|bool
+function validation(array $params ,array $validation_rule , array|null $messages = null) : array|bool|object
 {
    
     $validator = new \Rakit\Validation\Validator;
@@ -12,8 +12,8 @@ function validation(array $params ,array $validation_rule , array|null $messages
     }
     $validation->validate() ;
 
-    if(!empty($validation->errors()->all())){
-        return $validation->errors()->all();
+    if($validation->fails()){
+        return ['status' => false , 'errors' => $validation->errors()];
     }
-    return true ;
+    return ['status' => true] ;
 }
