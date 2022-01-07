@@ -20,7 +20,7 @@ function adminSaveUser($params)
     $validation = validation($params , ['email' => 'required']);
     if(is_array($validation)){
         setFlashMessage('error' , 'createUserError') ;
-        header('location:http://cafecms.mn/admin/user/add');
+        header('location:http://localhost/admin/user/add');
     }
 
     // create User ;
