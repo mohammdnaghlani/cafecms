@@ -12,8 +12,8 @@ function validation(array $params ,array $validation_rule , array|null $messages
     }
     $validation->validate() ;
 
-    if(!empty($validation->errors()->all())){
-        return $validation->errors()->all();
+    if($validation->fails()){
+        return ['status' => false ,  'errors' => $validation->errors()->firstOfAll()];
     }
-    return true ;
+    return  ['status' => true ]; ;
 }

@@ -17,8 +17,19 @@ function adminAddUser($params)
 
 function adminSaveUser($params)
 {
-    $validation = validation($params , ['email' => 'required']);
-    if(is_array($validation)){
+    $validation = validation(
+            $params ,
+            ['email' => 'required' ,'fullname' => 'required'],
+            [
+                'required' => 'این فیلد اجباری می باشد !' ,
+                // 'fullname:required' => ' انام و نام خانوادگی اجباری می باشد' ,
+            ]
+        );
+    
+
+    if(!$validation['status']){
+       
+        setFormError($validation['errors']);
         setFlashMessage('error' , 'createUserError') ;
         header('location:http://localhost/admin/user/add');
     }

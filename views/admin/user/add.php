@@ -27,7 +27,10 @@
               <?=CSRFInput() ;?>
                 <div class="box-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">ایمیل</label>
+                    <label for="exampleInputEmail1">
+                      ایمیل
+                      <span class="label label-danger"><?=getErrorByKey('email')?></span>
+                    </label>
                     <input type="text" name="email" class="form-control" id="exampleInputEmail1" placeholder="ایمیل">
                   </div>
                   <div class="form-group">
@@ -35,7 +38,9 @@
                     <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="رمز عبور">
                   </div>
                   <div class="form-group">
-                    <label for="fullname">نام و نام خانوادگی</label>
+                    <label for="fullname">نام و نام خانوادگی
+                      <span class="label label-danger"><?= getErrorByKey('fullname') ;?></span>
+                    </label>
                     <input type="text" name="fullname" class="form-control" id="fullname" placeholder="نام و نام خانوادگی">
                   </div>
                   <div class="form-group">
