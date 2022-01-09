@@ -31,7 +31,7 @@
                       ایمیل
                       <span class="label label-danger"><?=getErrorByKey('email')?></span>
                     </label>
-                    <input type="text" name="email" class="form-control" id="exampleInputEmail1" placeholder="ایمیل">
+                    <input type="text" value="<?= getOldData('email'); ?>" name="email" class="form-control" id="exampleInputEmail1" placeholder="ایمیل">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">رمز عبور</label>
@@ -41,18 +41,18 @@
                     <label for="fullname">نام و نام خانوادگی
                       <span class="label label-danger"><?= getErrorByKey('fullname') ;?></span>
                     </label>
-                    <input type="text" name="fullname" class="form-control" id="fullname" placeholder="نام و نام خانوادگی">
+                    <input type="text" name="fullname" value="<?= getOldData('fullname'); ?>" class="form-control" id="fullname" placeholder="نام و نام خانوادگی">
                   </div>
                   <div class="form-group">
                     <label for="mobile">شماره مبایل</label>
-                    <input type="text" name="mobile" class="form-control" id="mobile" placeholder="شماره مبایل">
+                    <input type="text" name="mobile" value="<?= getOldData('mobile'); ?>" class="form-control" id="mobile" placeholder="شماره مبایل">
                   </div>
                   <div class="form-group">
                     <label for="role">نقش کاربری</label>
                     <select name="role" id="role" class="form-control">
                       <option value="">یک مورد را انخاب کنید</option>
-                      <option value="1">کاربر</option>
-                      <option value="2">مدیر</option>
+                      <option value="1" <?= (getOldData('role') == 1 ? 'selected' : ''); ?>>کاربر</option>
+                      <option value="2" <?= (getOldData('role') == 2 ? 'selected' : ''); ?>>مدیر</option>
                     </select>
                   </div>
                 </div>

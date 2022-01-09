@@ -28,12 +28,29 @@ function adminSaveUser($params)
     
 
     if(!$validation['status']){
-       
-        setFormError($validation['errors']);
-        setFlashMessage('error' , 'createUserError') ;
+        $arr = [
+            'params' => $params,
+            'errors' => $validation['errors'],
+            'message' => ['type' => 'error' , 'key' => 'createUserError'],
+            'url' => 'http://localhost/admin/user/add'
+        ];
+        setErrors($arr);
+    }
+    $params = (object) $params ;
+
+    $data = array(
+        'email' => $params->email  ,
+        'password' => $params->password,
+        'full_name' => $params->fullname,
+        'mobile' => $params->mobile,
+        'role' => $params->role,
+        'confirmed' => 1,
+    );
+
+    $newUser = newUser($data) ;
+    if($newUser > 0){
+        setFlashMessage('success' , 'success') ;
         header('location:http://localhost/admin/user/add');
     }
-
-    // create User ;
     
 }
