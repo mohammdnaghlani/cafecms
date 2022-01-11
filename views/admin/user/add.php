@@ -27,29 +27,49 @@
               <?=CSRFInput() ;?>
                 <div class="box-body">
                   <div class="form-group">
+<<<<<<< HEAD
                     <label for="exampleInputEmail1">ایمیل
                       <span style="text-danger"><?=getErrorByKey('email' , 'form') ;?></span>
                     </label>
                     <input type="text" name="email" class="form-control" id="exampleInputEmail1" placeholder="ایمیل">
+=======
+                    <label for="exampleInputEmail1">
+                      ایمیل
+                      <span class="label label-danger"><?=getErrorByKey('email')?></span>
+                    </label>
+                    <input type="text" value="<?= getOldData('email'); ?>" name="email" class="form-control" id="exampleInputEmail1" placeholder="ایمیل">
+>>>>>>> master
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">رمز عبور</label>
                     <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="رمز عبور">
                   </div>
                   <div class="form-group">
+<<<<<<< HEAD
                     <label for="fullname">نام و نام خانوادگی</label>
                     <input type="text" name="fullname" class="form-control" id="fullname" placeholder="نام و نام خانوادگی" value="<?=getOld('fullname');?>">
+=======
+                    <label for="fullname">نام و نام خانوادگی
+                      <span class="label label-danger"><?= getErrorByKey('fullname') ;?></span>
+                    </label>
+                    <input type="text" name="fullname" value="<?= getOldData('fullname'); ?>" class="form-control" id="fullname" placeholder="نام و نام خانوادگی">
+>>>>>>> master
                   </div>
                   <div class="form-group">
                     <label for="mobile">شماره مبایل</label>
-                    <input type="text" name="mobile" class="form-control" id="mobile" placeholder="شماره مبایل">
+                    <input type="text" name="mobile" value="<?= getOldData('mobile'); ?>" class="form-control" id="mobile" placeholder="شماره مبایل">
                   </div>
                   <div class="form-group">
                     <label for="role">نقش کاربری</label>
                     <select name="role" id="role" class="form-control">
                       <option value="">یک مورد را انخاب کنید</option>
+<<<<<<< HEAD
                       <option value="1" <?=(getOld('role') == 1 ? 'selected':'')?>>کاربر</option>
                       <option value="2" >مدیر</option>
+=======
+                      <option value="1" <?= (getOldData('role') == 1 ? 'selected' : ''); ?>>کاربر</option>
+                      <option value="2" <?= (getOldData('role') == 2 ? 'selected' : ''); ?>>مدیر</option>
+>>>>>>> master
                     </select>
                   </div>
                 </div>

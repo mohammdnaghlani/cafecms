@@ -9,5 +9,8 @@
     "require": {
         "catfan/medoo": "^2.1",
         "rakit/validation": "^1.4"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.17"
     }
 }
