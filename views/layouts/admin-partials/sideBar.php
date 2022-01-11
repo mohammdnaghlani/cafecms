@@ -41,7 +41,7 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="<?=getUriByAliensName('createUserAdmin') ; ?>">ایجاد کاربر جدید</a></li>
-          <li><a href="">لیست کاربران</a></li>
+          <li><a href="<?=getUriByAliensName('listUserAdmin') ; ?>">لیست کاربران</a></li>
         </ul>
       </li>
     </ul>

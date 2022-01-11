@@ -16,6 +16,9 @@ require_once createPath('functions.view');
 require_once createPath('functions.message');
 require_once createPath('functions.utilities');
 
-#Models
+//Models
 
 require_once createPath('core.Model.user');
+
+//DEV_MOD
+require_once createPath('functions.faker');

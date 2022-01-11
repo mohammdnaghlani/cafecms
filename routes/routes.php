@@ -21,5 +21,10 @@ return array(
         'method' => 'post',
         'aliensName' => 'saveUserAdmin'
     ),
+    '/admin/user/list' => array(
+        'page' => 'listUserAdmin',
+        'method' => 'get',
+        'aliensName' => 'listUserAdmin'
+    ),
 
 );

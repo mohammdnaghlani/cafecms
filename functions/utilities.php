@@ -6,4 +6,6 @@ function setErrors(array $arr)
     setFormError($arr['errors']);
     setFlashMessage($arr['message']['type'] , $arr['message']['key']) ;
     header('location:' .$arr['url'] );
+    exit();
 }
+

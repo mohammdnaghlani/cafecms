@@ -54,3 +54,42 @@ function adminSaveUser($params)
     }
     
 }
+
+function listUserAdmin($params)
+{
+    $params['users'] = getUsers(['uid','email','full_name','role','confirmed']) ;
+    return loadAdmin('user.list' , $params ,'admin-layout' ) ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
