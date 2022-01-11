@@ -21,7 +21,6 @@ function setCSRFToken() : string
 function CSRFInput() : string
 {
     $getToken = setCSRFToken() ;
-
     $temp = '<input type="hidden" name="csrf_token" value="'. $getToken .'">' ;
     return $temp ;
 }

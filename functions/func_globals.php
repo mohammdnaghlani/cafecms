@@ -42,3 +42,13 @@ function getConfig(string $config_name) : mixed
     $config = include createPath('config.' . $config_name) ;
     return $config ;
 }
+
+
+function pagination(array $array , $page , &$totalPage) : array
+{
+    $countItems = count($array);
+    $totalPage = ceil($countItems / get__env('VIEW_PER_PAGE'));
+    $totalItem = ($page - 1 ) * get__env('VIEW_PER_PAGE') ;
+    $view = array_splice($array , $totalItem , get__env('VIEW_PER_PAGE'));
+    return $view;
+}

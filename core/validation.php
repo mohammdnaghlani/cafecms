@@ -13,13 +13,7 @@ function validation(array $params ,array $validation_rule , array|null $messages
     $validation->validate() ;
 
     if($validation->fails()){
-<<<<<<< HEAD
-        return ['status' => false , 'errors' => $validation->errors()];
-    }
-    return ['status' => true] ;
-=======
         return ['status' => false ,  'errors' => $validation->errors()->firstOfAll()];
     }
     return  ['status' => true ]; ;
->>>>>>> master
 }

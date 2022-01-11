@@ -21,5 +21,20 @@ return array(
         'method' => 'post',
         'aliensName' => 'saveUserAdmin'
     ),
+    '/admin/user/list' => array(
+        'page' => 'adminListUser',
+        'method' => 'get',
+        'aliensName' => 'listUserAdmin'
+    ),
+    '/admin/user/active' => array(
+        'page' => 'activeUserAdmin',
+        'method' => 'get',
+        'aliensName' => 'activeUserAdmin'
+    ),
+    '/admin/user/remove' => array(
+        'page' => 'adminRemoveUser',
+        'method' => 'post',
+        'aliensName' => 'removeUserAdmin'
+    ),
 
 );
