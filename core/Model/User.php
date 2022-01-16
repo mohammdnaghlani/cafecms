@@ -19,6 +19,33 @@ function getUsers(array|string $columns = '*') : array
     return $allUsers ;
 }
 
+function confirmedUserBuId(int $user_id) : bool
+{
+    $connect = connect();
+    $update = $connect->update('users' , ['confirmed' => 1] , ['uid' => $user_id]);
+    if($update->rowCount() > 0){
+        return true ;
+    }
+    return false ;
+}
+
+function removeUserById(int $user_id) : bool
+{
+    $connect = connect();
+    $remove = $connect->delete('users' , ['uid' => $user_id]);
+    if($remove->rowCount() > 0){
+        return true ;
+    }
+    return false ; 
+}
+
+
+
+
+
+
+
+
 function getRole(int $role) : string
 {
     $roles = array(
@@ -38,3 +65,4 @@ function userStatus(int $status) : string
 
     return $situation[$status] ; 
 }
+

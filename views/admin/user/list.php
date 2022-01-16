@@ -47,9 +47,15 @@
                       <td><?= getRole($user->role) ; ?></td>
                       <td><?= userStatus($user->confirmed) ; ?></td>
                       <td>
-                        <a href="#"><span class="fa fa-edit text-info"></span></a>
-                        <a href="#"><span class="fa fa-times text-danger"></span></a>
-                        <a href="#"><span class="fa fa-home text-warning"></span></a>
+                      <a href="<?=(getUriByAliensName('confirmeUser') . '?userId=' . $user->uid) ;?>"class="btn btn-success" ><span class="fa fa-check"></span></a>
+                        <a href="#" class="btn btn-info" ><span class="fa fa-edit"></span></a>
+                        <form method="post" action="<?=getUriByAliensName('removeUser')?>" class="inline">
+                         <?=CSRFInput() ;?>
+                          <button class="btn btn-danger" value="<?=$user->uid?>" name="user_id" type="submit" >
+                             <span class="fa fa-times "></span>
+                          </button>
+                        </form>
+                        
                       </td>
                     </tr>
                     <?php endforeach ;?>

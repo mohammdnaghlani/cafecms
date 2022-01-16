@@ -26,5 +26,15 @@ return array(
         'method' => 'get',
         'aliensName' => 'listUserAdmin'
     ),
+    '/admin/user/confirme' => array(
+        'page' => 'acceptUserByid',
+        'method' => 'get',
+        'aliensName' => 'confirmeUser'
+    ),
+    '/admin/user/remove' => array(
+        'page' => 'removeUser',
+        'method' => 'post',
+        'aliensName' => 'removeUser'
+    ),
 
 );

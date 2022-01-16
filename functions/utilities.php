@@ -9,3 +9,14 @@ function setErrors(array $arr)
     exit();
 }
 
+function redirect(string $url = null )
+{
+    $location = null ;
+    if(is_null($url)){
+        $location = $_SERVER['HTTP_REFERER'] ; 
+    }else{
+        $location = get__env('BASE_URI') . $url ; 
+    }
+    header('location:' .$location );
+    exit() ;
+}

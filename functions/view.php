@@ -50,7 +50,7 @@ function adminSaveUser($params)
     $newUser = newUser($data) ;
     if($newUser > 0){
         setFlashMessage('success' , 'success') ;
-        header('location:http://localhost/admin/user/add');
+        redirect('admin/user/add');
     }
     
 }
@@ -60,7 +60,30 @@ function listUserAdmin($params)
     $params['users'] = getUsers(['uid','email','full_name','role','confirmed']) ;
     return loadAdmin('user.list' , $params ,'admin-layout' ) ;
 }
+function acceptUserByid($params)
+{
+    $confirmed = confirmedUserBuId($params['userId']) ;
+    if($confirmed){
+        setFlashMessage('success' , 'success') ;
+    }else{
+        setFlashMessage('error' , 'success') ;
+    }  
+    redirect() ;
 
+}
+
+
+function removeUser($params)
+{
+    $remove = removeUserById($params['user_id']) ;
+    if($remove){
+        setFlashMessage('success' , 'success') ;
+    }else{
+        setFlashMessage('error' , 'success') ;
+    }
+  
+    redirect() ;
+}
 
 
 
