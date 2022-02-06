@@ -85,7 +85,36 @@ function removeUser($params)
     redirect() ;
 }
 
+function editUser($params)
+{
+    $params['user_info'] = getUserById($params['userId']) ;
+    // var_dump($params);
+    // die() ;
+    return loadAdmin('user.edit' , $params ,'admin-layout' ) ;
+}
 
+function updateUser($params)
+{
+    $password = trim($params['password']) ;
+    $update = [
+        'full_name' => $params['fullname'],
+        'mobile' => $params['mobile'],
+        'role' => $params['role'],
+    ];
+    if(!empty($password)){
+        $update['password'] = $password ;
+    }
+    
+     $update = UpdateUserById($update , $params['user_id']) ; 
+
+     if($update){
+        setFlashMessage('success' , 'success') ;
+    }else{
+        setFlashMessage('error' , 'success') ;
+    }
+    redirect() ;
+    
+}
 
 
 

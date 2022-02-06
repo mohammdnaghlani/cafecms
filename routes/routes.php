@@ -36,5 +36,15 @@ return array(
         'method' => 'post',
         'aliensName' => 'removeUser'
     ),
+    '/admin/user/edit' => array(
+        'page' => 'editUser',
+        'method' => 'get',
+        'aliensName' => 'editUser'
+    ),
+    '/admin/user/update' => array(
+        'page' => 'updateUser',
+        'method' => 'post',
+        'aliensName' => 'updateUser'
+    ),
 
 );

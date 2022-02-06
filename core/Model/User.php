@@ -18,7 +18,15 @@ function getUsers(array|string $columns = '*') : array
 
     return $allUsers ;
 }
-
+function getUserById(int $user_id) : bool|array|object
+{
+    $connect = connect();
+    $getUser = $connect->select('users' , '*' , ['uid' => $user_id]);
+    if($getUser){
+        return $getUser[0] ;
+    }
+    return false ;
+}
 function confirmedUserBuId(int $user_id) : bool
 {
     $connect = connect();
@@ -39,7 +47,17 @@ function removeUserById(int $user_id) : bool
     return false ; 
 }
 
+function UpdateUserById(array|object $data , int $userId) : bool
+{
+    $connect = connect();
+  
+    $update = $connect->update('users' , $data , ['uid' => $userId]);
 
+    if($update->rowCount() > 0){
+        return true ;
+    }
+    return false ;  
+}
 
 
 
