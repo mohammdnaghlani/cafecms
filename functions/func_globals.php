@@ -52,3 +52,13 @@ function pagination(array $array , $page , &$totalPage) : array
     $view = array_splice($array , $totalItem , get__env('VIEW_PER_PAGE'));
     return $view;
 }
+
+function PaginationWithMysql($page , &$totlaPage ) : array | Object
+{
+    $getAllRows = connect()->count('users');
+    $totlaPage = ceil($getAllRows)  / get__env('VIEW_PER_PAGE') ;
+    $totalItem = ($page - 1)  * get__env('VIEW_PER_PAGE') ; 
+    echo $totalItem . '<hr>' ;
+    $users = connect()->select('users' , '*' , ["LIMIT" => [$totalItem , get__env('VIEW_PER_PAGE')]] );
+    return $users ;
+}
