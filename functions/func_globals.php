@@ -42,3 +42,31 @@ function getConfig(string $config_name) : mixed
     $config = include createPath('config.' . $config_name) ;
     return $config ;
 }
+
+function paginamtionByArray(array $data , int $page , int|null &$totalPage) : array|object
+{
+    $countData = count($data) ;
+
+    $totalPage = ceil($countData / get__env('ITEMS_PER_PAGE')) ;
+    
+    $item = ($page - 1) * get__env('ITEMS_PER_PAGE') ;
+
+    $data = array_splice($data , $item , get__env('ITEMS_PER_PAGE')) ;
+
+    return $data ;
+}
+
+function paginationWithMysql(string $target ,array $columns ,  int $page , int|null &$totalPage ) : array|object
+{
+    $connect = connect();
+
+    $countData = $connect->count($target) ;
+
+    $totalPage = ceil($countData / get__env('ITEMS_PER_PAGE')) ;
+    
+    $item = ($page - 1) * get__env('ITEMS_PER_PAGE') ;
+
+    $data = $connect->select($target , $columns , ['LIMIT' => [$item , get__env('ITEMS_PER_PAGE')]]);
+
+    return $data ;
+}

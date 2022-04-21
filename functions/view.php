@@ -57,7 +57,10 @@ function adminSaveUser($params)
 
 function listUserAdmin($params)
 {
-    $params['users'] = getUsers(['uid','email','full_name','role','confirmed']) ;
+    $params['page'] =  intval(isset($params['page']) ? $params['page'] : 1 );
+    $params['totalPage'] = null ;
+    // $data = getUsers(['uid','email','full_name','role','confirmed']) ;
+    $params['users'] = paginationWithMysql( 'users' ,  ['uid','email','full_name','role','confirmed'],  $params['page'] ,  $params['totalPage']) ;
     return loadAdmin('user.list' , $params ,'admin-layout' ) ;
 }
 function acceptUserByid($params)

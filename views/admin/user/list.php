@@ -67,15 +67,15 @@
               <div class="col-sm-12">
                 <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
                   <ul class="pagination">
-                    <li class="paginate_button previous disabled" id="example2_previous">
-                      <a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a></li>
-                      <li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a></li>
-                      <li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a></li>
+                    <li class="paginate_button previous <?= $page == 1 ? 'disabled' : '' ?>" id="example2_previous">
+                      <a href="<?=$page > 1 ? getUriByAliensName('listUserAdmin') . '?page=' . ($page - 1) : '' ; ?>" aria-controls="example2" data-dt-idx="0" tabindex="0">قبلی</a></li>
+                      
+                      <?php for($i = 1; $i <= $totalPage ; $i++) : ?>
+                        <li class="paginate_button <?=$i == $page ? 'active' : '' ; ?>"><a href="<?=getUriByAliensName('listUserAdmin') . '?page=' . $i ; ?>" aria-controls="example2" data-dt-idx="2" tabindex="0"><?=$i?></a></li>
+                      <?php endfor ;?>
+                     
+                      <li class="paginate_button next <?= $page == $totalPage ? 'disabled' : '' ?>" id="example2_next">
+                      <a href="<?= $page > $totalPage ? '' : getUriByAliensName('listUserAdmin') . '?page=' . ($page + 1) ; ?>" aria-controls="example2" data-dt-idx="7" tabindex="0">بعدی</a></li>
                     </ul>
                   </div>
                 </div>
