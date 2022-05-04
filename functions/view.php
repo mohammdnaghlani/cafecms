@@ -2,7 +2,8 @@
 
 function forntIndex($params)
 {
-    return loadFront('index' , $params  ) ;
+    // return loadFront('auth.register' , $params ) ;
+    return loadFront('index' , $params  , 'front-layout') ;
 }
 
 function AdminIndex($params)
