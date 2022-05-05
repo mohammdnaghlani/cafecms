@@ -12,7 +12,7 @@ function newUser(array|object $data) : bool|int
 }
 
 
-function registerUser(string $email , string $password) 
+function registerUser(string $email , string $password , string $token = null) 
 {
      $userExist = userExist($email) ;
      if($userExist){
@@ -21,13 +21,13 @@ function registerUser(string $email , string $password)
      }
      $newUser = [
         'email' => $email ,
-        'password' => $password
+        'password' => $password,
+        'token' =>$token ,
     ];
 
     $create_user = newUser($newUser) ;
     if($create_user){
-        setFlashMessage('success' , 'success') ;
-        redirect('register');
+        return true ;
      }
      setFlashMessage('info' , 'info') ;
      redirect('register');

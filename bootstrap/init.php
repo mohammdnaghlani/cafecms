@@ -11,6 +11,7 @@ require_once createPath('core.database');
 require_once createPath('core.validation');
 require_once createPath('core.FlashMessage');
 require_once createPath('core.Errors');
+require_once createPath('core.mail');
 require_once createPath('core.OldData');
 require_once createPath('functions.view');
 require_once createPath('functions.message');

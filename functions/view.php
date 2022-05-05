@@ -13,10 +13,28 @@ function register($params)
 function frontRegisterUser($params)
 {    
     extract($params) ;
-    registerUser($email , $password) ;
+    $token = md5(microtime()) ;
+    $register = registerUser($email , $password , $token) ;
+    if($register){
+        $emailData = [
+            'subject' => 'this is a test',
+            'token'  => $token ,
+            'altBody' => 'test' ,
+        ];
+        sendEmail($email , $emailData , 'confirme_account');
+        setFlashMessage('success' , 'success') ;
+        redirect('register');
+    }
 }
 
+function acceptEmail($params)
+{
+   $token = $params['confirmed'];
 
+   // function findUserBytoken($token )
+   //if find true => $coonect->update('users) -> confirmed 0 => 1
+   //else redirect => 404 
+}
 // view function for admin
 
 function AdminIndex($params)

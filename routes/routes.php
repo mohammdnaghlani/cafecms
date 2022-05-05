@@ -17,6 +17,11 @@ return array(
         'method' => 'post',
         'aliensName' => 'register_user'
     ),
+    '/acceptEmail' => array(
+        'page' => 'acceptEmail',
+        'method' => 'get',
+        'aliensName' => 'acceptEmail'
+    ),
 
 
 

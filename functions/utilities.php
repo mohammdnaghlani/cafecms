@@ -11,6 +11,7 @@ function setErrors(array $arr)
 
 function redirect(string $url = null )
 {
+    ob_start() ;
     $location = null ;
     if(is_null($url)){
         $location = $_SERVER['HTTP_REFERER'] ; 
@@ -19,4 +20,5 @@ function redirect(string $url = null )
     }
     header('location:' .$location );
     exit() ;
+    echo ob_get_clean() ;
 }
