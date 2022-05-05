@@ -10,6 +10,44 @@ function newUser(array|object $data) : bool|int
     }
     return false ;
 }
+
+
+function registerUser(string $email , string $password) 
+{
+     $userExist = userExist($email) ;
+     if($userExist){
+        setFlashMessage('warning' , 'userExistMessage') ;
+        redirect('register');
+     }
+     $newUser = [
+        'email' => $email ,
+        'password' => $password
+    ];
+
+    $create_user = newUser($newUser) ;
+    if($create_user){
+        setFlashMessage('success' , 'success') ;
+        redirect('register');
+     }
+     setFlashMessage('info' , 'info') ;
+     redirect('register');
+}
+
+function  userExist(string $email) : bool
+{
+    if(count(getUserByEmail($email)) == 0){
+        return false ;
+    }
+    return true ;
+  
+}
+
+function getUserByEmail(string $email) : array|object
+{
+    $connect = connect();
+    
+    return $connect->select('users' , '*' , ['email' => $email] , ['LIMIT' => 1]) ;
+}
 function getUsers(array|string $columns = '*') : array
 {
     $connect = connect();

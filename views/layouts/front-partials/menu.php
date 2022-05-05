@@ -66,7 +66,7 @@
                                 <a class="btn btn-info">ورود به تاپ کالا</a>
                             </div>
                             <div class="dropdown-item font-weight-bold">
-                                <span>کاربر جدید هستید؟</span> <a class="register" href="#">ثبت‌نام</a>
+                                <span>کاربر جدید هستید؟</span> <a class="register" href="<?=getUriByAliensName('register') ; ?>">ثبت‌نام</a>
                             </div>
                             <hr>
                             <div class="dropdown-item">

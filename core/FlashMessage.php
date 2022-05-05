@@ -26,8 +26,12 @@ function showFlashMessage()
         ?>
             <style>
                 .swal-button-container{
-                float: left;
-                margin: 10px;
+                    float: left;
+                    margin: 10px;
+                }
+                .swal-text {
+                   text-align: right !important;
+                    
                 }
             </style>
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -37,7 +41,7 @@ function showFlashMessage()
                         text: "<?=getMessage($_SESSION['flashMessage']['body'])?>",
                         icon: "<?=($_SESSION['flashMessage']['type'])?>",
                         button: 'قبول', 
-                        timer:4000,					  
+                        timer:6000,					  
                     });
             </script>
         <?php

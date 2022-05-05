@@ -13,18 +13,19 @@
                             ثبت‌نام مجدد با شماره
                             همراه ندارید</div>
                         <div class="account-box-content">
-                            <form class="form-account">
+                            <form class="form-account" method="post" action="<?=getUriByAliensName('register_user') ; ?>">
+                            <?= CSRFInput() ;?>
                                 <div class="form-account-title">پست الکترونیک یا شماره موبایل</div>
                                 <div class="form-account-row">
                                     <label class="input-label"><i class="now-ui-icons users_single-02"></i></label>
-                                    <input class="input-field" type="text"
+                                    <input class="input-field" type="text" name="email"
                                         placeholder="پست الکترونیک یا شماره موبایل خود را وارد نمایید">
                                 </div>
                                 <div class="form-account-title">کلمه عبور</div>
                                 <div class="form-account-row">
                                     <label class="input-label"><i
                                             class="now-ui-icons ui-1_lock-circle-open"></i></label>
-                                    <input class="input-field" type="password"
+                                    <input class="input-field" type="password" name="password"
                                         placeholder="کلمه عبور خود را وارد نمایید">
                                 </div>
                                 <div class="form-account-agree">

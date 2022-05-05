@@ -1,11 +1,35 @@
 <?php
 
 return array(
+    // front routes
     '/' => array(
         'page' => 'forntIndex',
         'method' => 'get',
         'aliensName' => 'frontIndex'
     ),
+    '/register' => array(
+        'page' => 'register',
+        'method' => 'get',
+        'aliensName' => 'register'
+    ),
+    '/register-user' => array(
+        'page' => 'frontRegisterUser',
+        'method' => 'post',
+        'aliensName' => 'register_user'
+    ),
+
+
+
+
+
+
+
+
+
+
+
+
+    // adminroutes
     '/admin' => array(
         'page' => 'adminIndex',
         'method' => 'get',

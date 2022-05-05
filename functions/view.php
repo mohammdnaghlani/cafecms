@@ -5,6 +5,19 @@ function forntIndex($params)
     // return loadFront('auth.register' , $params ) ;
     return loadFront('index' , $params  , 'front-layout') ;
 }
+function register($params)
+{
+    return loadFront('auth.register' , $params ) ;
+}
+
+function frontRegisterUser($params)
+{    
+    extract($params) ;
+    registerUser($email , $password) ;
+}
+
+
+// view function for admin
 
 function AdminIndex($params)
 {

@@ -1,4 +1,5 @@
 </body>
+
 <!--   Core JS Files   -->
 <script src="<?=getFrontAssets('js/core/jquery.3.2.1.min.js');?>" type="text/javascript"></script>
 <script src="<?=getFrontAssets('js/core/popper.min.js');?>" type="text/javascript"></script>
@@ -23,5 +24,7 @@
 <script src="<?=getFrontAssets('js/plugins/JsLocalSearch.js');?>" type="text/javascript"></script>
 <!-- Main Js -->
 <script src="<?=getFrontAssets('js/main.js" type="text/javascript');?>"></script>
+
+<?= showFlashMessage() ;?>
 
 </html>
