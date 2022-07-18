@@ -22,6 +22,23 @@ return array(
         'method' => 'get',
         'aliensName' => 'acceptEmail'
     ),
+    '/login' => array(
+        'page' => 'loginIndex',
+        'method' => 'get',
+        'aliensName' => 'loginPage'
+    ),
+    '/checkUser' => array(
+        'page' => 'login',
+        'method' => 'post',
+        'aliensName' => 'checkUser'
+    ),
+
+    '/profile' => array(
+        'page' => 'profile',
+        'method' => 'get',
+        'aliensName' => 'profile',
+        'middleware' => 'mLogin,mRole'
+    ),
 
 
 

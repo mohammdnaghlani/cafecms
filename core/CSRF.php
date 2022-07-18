@@ -12,7 +12,7 @@ function generateToken() : string
 function setCSRFToken() : string
 {
     $getToken =  generateToken();
-    if(isset($_SESSION['csrf_token'])){
+    if(isset($_SESSION['csrf_token']) && !empty($_SESSION['csrf_token'])){
         return $_SESSION['csrf_token'] ;
     }
     $_SESSION['csrf_token'] = $getToken ;
@@ -21,7 +21,6 @@ function setCSRFToken() : string
 function CSRFInput() : string
 {
     $getToken = setCSRFToken() ;
-
     $temp = '<input type="hidden" name="csrf_token" value="'. $getToken .'">' ;
     return $temp ;
 }

@@ -16,6 +16,14 @@ function runApp()
         header('HTTP/1.0 403 access denied');
         throw new Exception('access denied');  
     }
+    //middleware scop
+    $getMiddlewares = getMiddlewares($routeExsist) ;
+    if($getMiddlewares){
+        $getMiddlewares() ;
+    }
+
+    //end middleware scop
+
     // var_dump($methodExsist);
     $params = getParams() ;
 
@@ -36,6 +44,22 @@ function routeExsist(string $current_route): array|bool
     }
     return false;
 }
+function getMiddlewares(array $route_info)
+{
+    if(!isset($route_info['middleware'])){
+        return false ;
+    }
+    return $route_info['middleware'] ;
+}
+
+
+
+
+
+
+
+
+
 function getCurrentRequest(): string
 {
     $dataRequest = explode('?', $_SERVER['REQUEST_URI']);

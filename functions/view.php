@@ -36,6 +36,30 @@ function acceptEmail($params)
    //else redirect => 404 
 }
 // view function for admin
+function loginIndex($params)
+{
+    return loadFront('auth.login' , $params ) ;
+}
+function login($params)
+{    
+   $userExiste = loginByEmail($params['email'] , $params['password']) ;
+    if(!$userExiste){
+        setFlashMessage('error' , 'loginError') ;
+        redirect('login');
+    }
+    setFlashMessage('success' , 'loginSuccess') ;
+    redirect('profile');
+   
+}
+
+function profile($params)
+{
+    var_dump(true) ;
+}
+
+
+
+
 
 function AdminIndex($params)
 {

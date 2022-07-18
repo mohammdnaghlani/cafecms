@@ -98,6 +98,29 @@ function UpdateUserById(array|object $data , int $userId) : bool
 }
 
 
+function loginByEmail(string $email , string $password) : bool
+{
+    $getUser = getUserByEmail($email) ;
+    if(empty($getUser)){
+        return false ;
+    }
+    if($getUser[0]['password'] != $password){
+        return false ;
+    }
+    $_SESSION['login'] = [
+        'status' => true ,
+        'userInfo' => [
+            'userId' => $getUser[0]['uid'],
+            'email' => $getUser[0]['email'],
+            'role' => $getUser[0]['role'],
+        ],
+    ];
+    return true ;
+}
+
+
+
+
 
 
 
