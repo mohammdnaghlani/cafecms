@@ -21,7 +21,7 @@ function frontRegisterUser($params)
             'token'  => $token ,
             'altBody' => 'test' ,
         ];
-        sendEmail($email , $emailData , 'confirme_account');
+       // sendEmail($email , $emailData , 'confirme_account');
         setFlashMessage('success' , 'success') ;
         redirect('register');
     }

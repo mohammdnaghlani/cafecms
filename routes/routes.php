@@ -37,7 +37,7 @@ return array(
         'page' => 'profile',
         'method' => 'get',
         'aliensName' => 'profile',
-        'middleware' => 'mLogin,mRole'
+        'middleware' => 'mLogin'
     ),
 
 
