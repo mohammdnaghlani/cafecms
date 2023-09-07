@@ -54,9 +54,14 @@ function login($params)
 
 function profile($params)
 {
-    var_dump(true) ;
+    loadFront('profile' , $params , 'front-layout') ;
 }
 
+function logout($params)
+{
+    unset($_SESSION['login']);
+    redirect('login');
+}
 
 
 

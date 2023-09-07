@@ -39,6 +39,11 @@ return array(
         'aliensName' => 'profile',
         'middleware' => 'mLogin'
     ),
+    '/logout' => array(
+        'page' => 'logout',
+        'method' => 'get',
+        'aliensName' => 'logout',
+    ),
 
 
 

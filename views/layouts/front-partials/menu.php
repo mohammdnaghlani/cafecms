@@ -57,31 +57,46 @@
                 </div>
                 <div class="col-md-4 col-sm-12">
                     <div class="user-login dropdown">
-                        <a href="#" class="btn btn-neutral dropdown-toggle" data-toggle="dropdown"
+                        <?php if(!isLogin()) :?>
+                            <a href="#" class="btn btn-neutral dropdown-toggle" data-toggle="dropdown"
                             id="navbarDropdownMenuLink1">
-                            ورود / ثبت نام
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
-                            <div class="dropdown-item">
-                                <a class="btn btn-info">ورود به تاپ کالا</a>
-                            </div>
-                            <div class="dropdown-item font-weight-bold">
-                                <span>کاربر جدید هستید؟</span> <a class="register" href="<?=getUriByAliensName('register') ; ?>">ثبت‌نام</a>
-                            </div>
-                            <hr>
-                            <div class="dropdown-item">
-                                <a href="#" class="dropdown-item-link">
-                                    <i class="now-ui-icons users_single-02"></i>
-                                    پروفایل
-                                </a>
-                            </div>
-                            <div class="dropdown-item">
-                                <a href="#" class="dropdown-item-link">
-                                    <i class="now-ui-icons shopping_bag-16"></i>
-                                    پیگیری سفارش
-                                </a>
-                            </div>
-                        </ul>
+                                ورود / ثبت نام
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
+                                <div class="dropdown-item">
+                                    <a class="btn btn-info" href="<?=getUriByAliensName('loginPage')?>">ورود به تاپ کالا</a>
+                                </div>
+                                <div class="dropdown-item font-weight-bold">
+                                    <span>کاربر جدید هستید؟</span> <a class="register" href="<?=getUriByAliensName('register') ; ?>">ثبت‌نام</a>
+                                </div>
+                              </ul>
+                        <?php else :?>
+                            <a href="#" class="btn btn-neutral dropdown-toggle" data-toggle="dropdown"
+                            id="navbarDropdownMenuLink1">
+                                پروفایل
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
+                                <div class="dropdown-item">
+                                    <a href="<?=getUriByAliensName('profile')?>" class="dropdown-item-link">
+                                        <i class="now-ui-icons users_single-02"></i>
+                                        پروفایل
+                                    </a>
+                                </div>
+                                <div class="dropdown-item">
+                                    <a href="#" class="dropdown-item-link">
+                                        <i class="now-ui-icons shopping_bag-16"></i>
+                                        پیگیری سفارش
+                                    </a>
+                                </div>
+                                <div class="dropdown-item">
+                                    <a href="<?=getUriByAliensName('logout')?>" class="dropdown-item-link">
+                                        <i class="now-ui-icons media-1_button-power"></i>
+                                       خروج از سیستم 
+                                    </a>
+                                </div>
+                            </ul>
+                        <?php endif;?>
+                        
                     </div>
                     <div class="cart dropdown">
                         <a href="#" class="btn dropdown-toggle" data-toggle="dropdown" id="navbarDropdownMenuLink1">

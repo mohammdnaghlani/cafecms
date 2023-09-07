@@ -14,6 +14,7 @@ require_once createPath('core.Errors');
 require_once createPath('core.mail');
 require_once createPath('core.OldData');
 require_once createPath('functions.view');
+require_once createPath('functions.helper');
 require_once createPath('functions.message');
 require_once createPath('functions.utilities');
 require_once createPath('middleware.middleware');
