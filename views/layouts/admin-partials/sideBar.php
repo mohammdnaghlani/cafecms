@@ -44,6 +44,17 @@
           <li><a href="<?=getUriByAliensName('listUserAdmin') ; ?>">لیست کاربران</a></li>
         </ul>
       </li>
+      <li class="treeview">
+        <a href="#"><i class="fa fa-link"></i> <span>مدیریت منو</span>
+          <span class="pull-left-container">
+            <i class="fa fa-angle-right pull-left"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="<?=getUriByAliensName('addmenu') ; ?>">ایجاد منوی جدید</a></li>
+          <li><a href="#">لیست منوها</a></li>
+        </ul>
+      </li>
     </ul>
     <!-- /.sidebar-menu -->
   </section>

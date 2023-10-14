@@ -21,7 +21,8 @@ require_once createPath('middleware.middleware');
 
 //Models
 
-require_once createPath('core.Model.user');
+require_once createPath('core.Model.User');
+require_once createPath('core.Model.Menu');
 
 //DEV_MOD
 require_once createPath('functions.faker');

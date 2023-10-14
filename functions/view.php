@@ -181,7 +181,20 @@ function updateUser($params)
 }
 
 
+function addmenu($params)
+{
+    $params['menus'] = getMenus() ;
+    return loadAdmin('menu.add' , $params ,'admin-layout' ) ;
+}
 
+function test($params)
+{
+    $menus = getParentMenus();
+
+    foreach($menus => $key => $val){
+        
+    }
+}
 
 
 

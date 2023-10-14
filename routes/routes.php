@@ -97,5 +97,16 @@ return array(
         'method' => 'post',
         'aliensName' => 'updateUser'
     ),
+    '/admin/menu/add' => array(
+        'page' => 'addmenu',
+        'method' => 'get',
+        'aliensName' => 'addmenu'
+    ),
+
+    '/test' => array(
+        'page' => 'test',
+        'method' => 'get',
+        'aliensName' => 'test'
+    ),
 
 );
