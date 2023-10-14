@@ -8,11 +8,39 @@ function getMenus(array|string $columns = '*') : array
 
     return $menus ;
 }
-function getParentMenus(array|string $columns = '*') : array
+function getParentMenus($id = 0) 
 {
     $connect = connect();
 
-    $menus = $connect->select('menus' , $columns , ['parent_id' => 0 ]);
+    $menus = $connect->select('menus' , ['id' , 'name'], ['parent_id' => $id ]);
+    echo "<ul>" ;
+    foreach($menus as $key => $val){
+        echo "<li>" . $val['name'] ;
+        $temp = $connect->count('menus' , ['parent_id' =>$val['id'] ]) ;
+        if($temp > 0){
+            chiledMenu($val['id']) ;
+        }
+        echo '</li>' ;
+    }
+    echo "</ul>" ;
 
-    return $menus ;
+}
+
+function chiledMenu($id , $step = false)
+{
+    $connect = connect();
+
+    $chiledMenu = $connect->select('menus' , ['id' , 'name'], ['parent_id' => $id ]);
+   
+    echo "<ul>" ;
+    foreach($chiledMenu as $key => $val){
+        echo "<li>" . $val['name'] ;
+        $temp = $connect->count('menus' , ['parent_id' =>$val['id'] ]) ;
+        if($temp > 0){
+            chiledMenu($val['id']) ;
+        }
+        echo '</li>' ;
+    }
+    echo "</ul>" ;
+
 }

@@ -190,10 +190,6 @@ function addmenu($params)
 function test($params)
 {
     $menus = getParentMenus();
-
-    foreach($menus => $key => $val){
-        
-    }
 }
 
 
